@@ -1,0 +1,215 @@
+﻿<Window x:Class="Course.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Course"
+        mc:Ignorable="d"
+        Title="Регистрация" 
+        FontFamily="Arial" 
+        FontSize="14" 
+        Background="#FFACC864" 
+        BorderBrush="#FFACC864" 
+        WindowStartupLocation="CenterScreen"
+        Icon="E:\Education\Course\Course\images\bank.ico" Width="510.666" Height="426.666" ResizeMode="NoResize" KeyDown="exit">
+    <Grid 
+        Background="#FFFFFFDE" 
+        HorizontalAlignment="Left"
+        Width="511" 
+        Margin="0,0,-6,0">
+        <Label x:Name="lb_name" 
+               Content="Имя" 
+               HorizontalAlignment="Left" 
+               Margin="10,50,0,0" 
+               VerticalAlignment="Top" 
+               Foreground="#FF0C1E0C"/>
+        <Label x:Name="lb_sname" 
+               Content="Фамилия" 
+               HorizontalAlignment="Left"
+               Margin="10,3,0,0" 
+               VerticalAlignment="Top" 
+               Foreground="#FF0C1E0C"/>
+        <TextBox x:Name="fist_name" 
+                 HorizontalAlignment="Left" 
+                 Height="24"
+                 Margin="10,76,0,0" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Top" 
+                 Width="228" 
+                 Background="White" 
+                 BorderBrush="#FF588403" 
+                 AutomationProperties.HelpText="Введите имя" FontSize="18"/>
+        <Label x:Name="lb_position" 
+               Content="Должность" 
+               HorizontalAlignment="Left" 
+               Margin="258,100,0,0" 
+               VerticalAlignment="Top" 
+               Foreground="#FF0C1E0C"/>
+        <ComboBox x:Name="position" 
+            HorizontalAlignment="Left" 
+            Margin="258,126,0,0"
+            VerticalAlignment="Top"
+            Width="228" 
+            BorderBrush="#FF588403" 
+            Foreground="#FF0C1E0C" 
+            Height="24" 
+            AutomationProperties.HelpText="Выберите должность" 
+            SelectionChanged="position_SelectionChanged" IsDropDownOpen="False">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                    <GradientStop Color="#FF588403" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="E:\Education\Course\Course\images\boss.png" Width="16" Height="16" Margin="0, 0, 5, 0"></Image>
+                <TextBlock>Руководитель отдела</TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="E:\Education\Course\Course\images\headofSector.png" Width="16" Height="16" Margin="0, 0, 5, 0"></Image>
+                <TextBlock>Руководитель сектора</TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="E:\Education\Course\Course\images\specialist.png" Width="16" Height="16" Margin="0, 0, 5, 0"></Image>
+                <TextBlock>Специалист</TextBlock>
+            </StackPanel>
+        </ComboBox>
+        <Button x:Name="btn_reg" 
+                Content="Регистрация" 
+                HorizontalAlignment="Left" 
+                Margin="142,354,0,0"
+                VerticalAlignment="Top"
+                Width="96" Height="28"
+                Background="#FFB7CB4F"
+                Click="btn_reg_Click"
+                BorderBrush="#FF588403" 
+                Foreground="#FF0C1E0C"
+                BorderThickness="1,1,1,1"/>
+        <TextBox x:Name="second_name" 
+                 HorizontalAlignment="Left"
+                 Height="24" Margin="10,26,0,0"
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Top" 
+                 Width="228"
+                 Background="White" 
+                 BorderBrush="#FF588403"                
+                AutomationProperties.HelpText="Введите Фамилию" FontSize="18"/>
+        <Label x:Name="lb_third" 
+               Content="Отчество" 
+               HorizontalAlignment="Left"
+               Margin="10,100,0,0"
+               VerticalAlignment="Top"
+               Foreground="#FF0C1E0C"
+               RenderTransformOrigin="0.31,-0.603"/>
+        <TextBox x:Name="third_name"
+                 HorizontalAlignment="Left"
+                 Height="24" 
+                 Margin="10,126,0,0"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top"
+                 Width="228"
+                 Background="White"
+                 BorderBrush="#FF588403"
+                 AutomationProperties.HelpText="введите отчество" FontSize="18"/>
+        <DatePicker x:Name="date"
+                    HorizontalAlignment="Left" 
+                    Margin="258,26,0,0"
+                    VerticalAlignment="Top"
+                    Width="228" 
+                    FirstDayOfWeek="Monday"
+                    DisplayDateEnd="1998-12-31"
+                    DisplayDateStart="1947-12-31"
+                    AutomationProperties.HelpText="Введите дату рождения" Text="Дата Рождения"/>
+        <Button x:Name="btn_employee"
+                Content="Сотрудники"
+                HorizontalAlignment="Left" 
+                Margin="10,354,0,0"
+                VerticalAlignment="Top"
+                Width="96" Height="28"
+                BorderBrush="#FF588403"
+                Foreground="#FF0C1E0C"                
+                Click="btn_employee_Click" Background="#FFB7CB4F"/>
+        <Button x:Name="btn_exit" 
+                Content="Выход" 
+                HorizontalAlignment="Left" 
+                Margin="438,3,0,0" 
+                VerticalAlignment="Top"
+                Width="48" 
+                Background="{x:Null}" 
+                BorderBrush="{x:Null}" 
+                Foreground="#FF22E00F"
+                Click="btn_exit_Click"/>
+        <!--<Label x:Name="lb_nameOfBoss" 
+            Content="Имя" 
+            HorizontalAlignment="Left" 
+            Margin="12,231,0,0" 
+            VerticalAlignment="Top" 
+            Foreground="#FF0C1E0C"/>
+        <Label x:Name="lb_snameOfBoss" 
+            Content="Фамилия" 
+            HorizontalAlignment="Left"
+            Margin="12,181,0,0" 
+            VerticalAlignment="Top" 
+            Foreground="#FF0C1E0C"/>
+        <TextBox x:Name="fist_nameOfBoss" 
+            HorizontalAlignment="Left" 
+            Height="24" Margin="12,257,0,0" 
+            TextWrapping="Wrap" 
+            VerticalAlignment="Top" 
+            Width="228" 
+            Background="White" 
+            BorderBrush="#FF588403" 
+            AutomationProperties.HelpText="Введите имя" IsEnabled="False" FontSize="18"/>
+        <TextBox x:Name="second_nameOfBoss" 
+            HorizontalAlignment="Left"
+            Height="24" Margin="12,207,0,0"
+            TextWrapping="Wrap" 
+            VerticalAlignment="Top" 
+            Width="228"
+            Background="White" 
+            BorderBrush="#FF588403"                
+            AutomationProperties.HelpText="Введите Фамилию" IsEnabled="False" FontSize="18"/>
+        <Label x:Name="lb_thirdOfBoss" 
+            Content="Отчество" 
+            HorizontalAlignment="Left"
+            Margin="12,281,0,0"
+            VerticalAlignment="Top"
+            Foreground="#FF0C1E0C"
+            RenderTransformOrigin="0.31,-0.603"/>
+        <TextBox x:Name="third_nameOfBoss"
+            HorizontalAlignment="Left"
+            Height="24" 
+            Margin="12,307,0,0"
+            TextWrapping="Wrap"
+            VerticalAlignment="Top"
+            Width="228"
+            Background="White"
+            BorderBrush="#FF588403"
+            AutomationProperties.HelpText="введите отчество" IsEnabled="False" FontSize="18"/>-->
+        <Label Content="Начальник" HorizontalAlignment="Left" Margin="10,155,0,0" VerticalAlignment="Top" Foreground="#FFB7CB4F" FontSize="16"/>
+        <TextBox x:Name="adress" 
+            HorizontalAlignment="Left" 
+            Height="24" Margin="258,76,0,0" 
+            TextWrapping="Wrap" 
+            VerticalAlignment="Top" 
+            Width="228" 
+            Background="White" 
+            BorderBrush="#FF588403" 
+            AutomationProperties.HelpText="Введите имя" FontSize="18"/>
+        <Label x:Name="lb_adress" 
+            Content="Адресс" 
+            HorizontalAlignment="Left" 
+            Margin="258,50,0,0" 
+            VerticalAlignment="Top" 
+            Foreground="#FF0C1E0C"/>
+        <Label x:Name="lb_date" 
+            Content="Дата" 
+            HorizontalAlignment="Left"
+            Margin="258,0,0,0" 
+            VerticalAlignment="Top" 
+            Foreground="#FF0C1E0C"/>
+        <Image Height="148" Margin="258,188,25,0" Source="E:\Education\Course\Course\images\employees.png" VerticalAlignment="Top"/>
+        <ListBox x:Name="lst_of_chiefs" HorizontalAlignment="Left" Height="148" Margin="10,188,0,0" VerticalAlignment="Top" Width="228" FontSize="10" IsEnabled="False"/>
+
+    </Grid>
+</Window>

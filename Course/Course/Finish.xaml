@@ -1,0 +1,40 @@
+﻿<Window x:Class="Course.Finish"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Course"
+        mc:Ignorable="d"
+        Title="Finish" Height="178.667" Width="374.334" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FFFFFFDE" Height="148" VerticalAlignment="Top">
+        <Label Content="Вы действительно желаете выйти?" 
+               HorizontalAlignment="Left"
+               Margin="5,32,0,80"
+               Width="356"
+               Foreground="#FF1F4D09"
+               FontWeight="Bold"
+               FontSize="20"/>
+        <Button x:Name="btn_ok" 
+                Content="Да" 
+                HorizontalAlignment="Left"
+                Margin="23,103,0,0" 
+                VerticalAlignment="Top"
+                Width="75" 
+                Background="#FFB7CB4F" 
+                BorderBrush="#FF1F4D09" 
+                Foreground="#FF1F4D09" 
+                Click="btn_ok_Click"
+                FontSize="18"/>
+        <Button x:Name="btn_no" 
+                Content="Нет" 
+                HorizontalAlignment="Left"
+                Margin="264,103,0,0"
+                VerticalAlignment="Top" 
+                Width="75" 
+                Background="#FFB7CB4F" 
+                BorderBrush="#FF1F4D09" 
+                Foreground="#FF1F4D09" 
+                Click="btn_no_Click"
+                FontSize="18"/>
+    </Grid>
+</Window>
